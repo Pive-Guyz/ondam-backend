@@ -1,4 +1,8 @@
-# 💕 ON:DAM
+<div align="center">
+
+  # 💕 ON:DAM
+  <img src="https://github.com/Pive-Guyz/ondam-backend/blob/develop/document/introduce.png?raw=true" height="500px"/>
+</div>
 
 ## 👨‍💻 DEVELOPERS
 
@@ -100,25 +104,25 @@
 ### 1. Member
 
 ### 2. Counselee
-<details><summary>내담자 등록</summary>
+<details><summary> 내담자 등록 </summary>
   <img src="https://github.com/Pive-Guyz/ondam-backend/blob/develop/document/ScreenDesign/counsel/insert_counselee.png?raw=true" width="100%" />
 </details>
 
-<details><summary>내담자별 상담 일지 조회</summary>
+<details><summary> 내담자별 상담 일지 조회 </summary>
   <img src="https://github.com/Pive-Guyz/ondam-backend/blob/develop/document/ScreenDesign/counsel/counselees.png?raw=true" width="100%" />
 </details>
 
 ### 3. Counsel
-<details><summary>상담 일지 작성</summary>
+<details><summary> 상담 일지 작성 </summary>
   <img src="https://github.com/Pive-Guyz/ondam-backend/blob/develop/document/ScreenDesign/counsel/create_counsel.png?raw=true" width="100%" />
 </details>
 
-<details><summary>상담 일지 작성 취소</summary>
+<details><summary> 상담 일지 작성 취소 </summary>
   <img src="https://github.com/Pive-Guyz/ondam-backend/blob/develop/document/ScreenDesign/counsel/cancel_counsel.png?raw=true" width="100%" />
 </details>
 
 ### 4. Analysis
-<details><summary>상담 일지 상세 확인</summary>
+<details><summary> 상담 일지 상세 확인 </summary>
   <img src="https://github.com/Pive-Guyz/ondam-backend/blob/develop/document/ScreenDesign/counsel/counsel_1.png?raw=true" width="100%" /> <br />
     <img src="https://github.com/Pive-Guyz/ondam-backend/blob/develop/document/ScreenDesign/counsel/counsel_2.png?raw=true" width="100%" />
 </details>
@@ -532,33 +536,63 @@
 # ✍🏻 API TEST
 
 ### 1. Member
+
+
 ### 2. Counselee
+<details><summary> 내담자 목록 조회 </summary>
+  <img src="https://github.com/Pive-Guyz/ondam-backend/blob/develop/document/APITest/counsel/move_counsel.gif?raw=true" width="800" />
+</details>
+<details><summary> 내담자 등록 </summary>
+  <img src="https://github.com/Pive-Guyz/ondam-backend/blob/develop/document/APITest/counsel/insert_counselee.gif?raw=true" width="800"/>
+</details>
+<details><summary> 내담자 등록 시 필수 정보 관련 모달 </summary>
+  <img src="https://github.com/Pive-Guyz/ondam-backend/blob/develop/document/APITest/counsel/insert_counsel_modal.gif?raw=true" width="800" />
+</details>
+<details><summary> 내담자 등록 취소 </summary>
+  <img src="https://github.com/Pive-Guyz/ondam-backend/blob/develop/document/APITest/counsel/counselee_cancle.gif?raw=true" width="800" />
+</details>
+
+
 ### 3. Counsel
+<details><summary> 내담자별 상담 일지 조회 </summary>
+  <img src="https://github.com/Pive-Guyz/ondam-backend/blob/develop/document/APITest/counsel/check_counselee.gif?raw=true" width="800" />
+</details>
+<details><summary> 상담 일지 작성 </summary>
+  <img src="https://github.com/Pive-Guyz/ondam-backend/blob/develop/document/APITest/counsel/counsel.gif?raw=true" width="800" />
+</details>
+<details><summary> 상담 일지 작성 취소 </summary>
+  <img src="https://github.com/Pive-Guyz/ondam-backend/blob/develop/document/APITest/counsel/counsel_cancle.gif?raw=true" width="800" />
+</details>
+
 ### 4. Analysis
+<details><summary> 상담 일지 상세 확인 </summary>
+  <img src="https://github.com/Pive-Guyz/ondam-backend/blob/develop/document/APITest/counsel/analysis_detail.gif?raw=true" width="800" />
+</details>
+
 ### 5. Diary
 <details><summary> 일기 조회 </summary>
-  <img src="https://github.com/Pive-Guyz/ondam-backend/blob/develop/document/GIF/diary/DiaryPage.gif"/>
+  <img src="https://github.com/Pive-Guyz/ondam-backend/blob/develop/document/GIF/diary/DiaryPage.gif" width="800" />
 </details>
 
 <details><summary> 일기 작성 </summary>
-  <img src="https://github.com/Pive-Guyz/ondam-backend/blob/develop/document/GIF/diary/WriteDiary.gif"/>
+  <img src="https://github.com/Pive-Guyz/ondam-backend/blob/develop/document/GIF/diary/WriteDiary.gif" width="800" />
 </details>
 
 <details><summary> 일기 삭제 </summary>
-  <img src="https://github.com/Pive-Guyz/ondam-backend/blob/develop/document/GIF/diary/DeleteDiary.gif"/>
+  <img src="https://github.com/Pive-Guyz/ondam-backend/blob/develop/document/GIF/diary/DeleteDiary.gif" width="800" />
 </details>
 
 ### 6. Reply
 <details><summary> 답장 조회 </summary>
-  <img src="https://github.com/Pive-Guyz/ondam-backend/blob/develop/document/GIF/diary/ReadReply.gif"/>
+  <img src="https://github.com/Pive-Guyz/ondam-backend/blob/develop/document/GIF/diary/ReadReply.gif" width="800" />
 </details>
 
 <details><summary> 답장 작성 </summary>
-  <img src="https://github.com/Pive-Guyz/ondam-backend/blob/develop/document/GIF/diary/WriteReply.gif"/>
+  <img src="https://github.com/Pive-Guyz/ondam-backend/blob/develop/document/GIF/diary/WriteReply.gif" width="800" />
 </details>
 
 <details><summary> 답장 삭제 </summary>
-  <img src="https://github.com/Pive-Guyz/ondam-backend/blob/develop/document/GIF/diary/DeleteMyReply.gif"/>
+  <img src="https://github.com/Pive-Guyz/ondam-backend/blob/develop/document/GIF/diary/DeleteMyReply.gif" width="800" />
 </details>
 
 ### 7. Report
@@ -820,38 +854,11 @@ spec:
 
 <br><br>
 
-# 동료평가
-|곽우석| peer review |
+# 🦄 프로젝트 소감
+| 이름 | 내용 |
 |:---:|-|
-|김석희| 평가 내용 |
-|서민종| 평가 내용 |
-|이상모| 평가 내용 |
-|최혜민| 평가 내용 |
-
-|김석희| peer review |
-|:---:|-|
-|곽우석| 평가 내용 |
-|서민종| 평가 내용 |
-|이상모| 평가 내용 |
-|최혜민| 평가 내용 |
-
-|서민종| peer review |
-|:---:|-|
-|곽우석| 평가 내용 |
-|김석희| 평가 내용 |
-|이상모| 평가 내용 |
-|최혜민| 평가 내용 |
-
-|이상모| peer review |
-|:---:|-|
-|곽우석| 평가 내용 |
-|김석희| 평가 내용 |
-|서민종| 평가 내용 |
-|최혜민| 평가 내용 |
-
-|최혜민| peer review |
-|:---:|-|
-|곽우석| 평가 내용 |
-|김석희| 평가 내용 |
-|서민종| 평가 내용 |
-|이상모| 평가 내용 |
+|곽우석| 내용 |
+|김석희| 내용 |
+|서민종| 내용 |
+|이상모| 내용 |
+|최혜민| 내용 |

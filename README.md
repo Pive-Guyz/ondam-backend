@@ -57,6 +57,26 @@
 
 # 💭 DDD 설계
 
+<details><summary> DDD 1차 </summary>
+  <img src="https://github.com/Pive-Guyz/ondam-backend/blob/develop/document/DDD/DDD_1st.jpg"/>
+</details>
+
+<details><summary> DDD 2차 </summary>
+  <img src="https://github.com/Pive-Guyz/ondam-backend/blob/develop/document/DDD/DDD_2nd.jpg"/>
+</details>
+
+<details><summary> DDD 3차 </summary>
+  <img src="https://github.com/Pive-Guyz/ondam-backend/blob/develop/document/DDD/DDD_3rd.jpg"/>
+</details>
+
+<details><summary> DDD 4차 </summary>
+  <img src="https://github.com/Pive-Guyz/ondam-backend/blob/develop/document/DDD/DDD_4th.jpg"/>
+</details>
+
+<details><summary> Context Mapping </summary>
+  <img src="https://github.com/Pive-Guyz/ondam-backend/blob/develop/document/DDD/ContextMapping.jpg"/>
+</details>
+
 <br><br>
 
 # 🗃️ DB 모델링
@@ -69,7 +89,7 @@
 
 # 🖼️ 화면 설계
 ## 와이어 프레임
-
+<img src="https://github.com/Pive-Guyz/ondam-backend/blob/develop/document/WireFrame.png"/>
 
 ## UI 설계
 ### 0. Main
@@ -104,9 +124,44 @@
 </details>
 
 ### 5. Diary
-### 6. Diary Record
-### 7. Reply
-### 8. Report
+<details><summary> 내 일기 목록 </summary>
+  <img src="https://github.com/Pive-Guyz/ondam-backend/blob/develop/document/ScreenDesign/diary/DiaryPage.png"/>
+</details>
+
+<details><summary> 내 일기 조회 </summary>
+  <img src="https://github.com/Pive-Guyz/ondam-backend/blob/develop/document/ScreenDesign/diary/MyDiary.png"/>
+</details>
+
+<details><summary> 받은 답장 조회 </summary>
+  <img src="https://github.com/Pive-Guyz/ondam-backend/blob/develop/document/ScreenDesign/diary/ReceivedReply.png"/>
+</details>
+
+<details><summary> 일기 작성창 </summary>
+  <img src="https://github.com/Pive-Guyz/ondam-backend/blob/develop/document/ScreenDesign/diary/WriteDiaryModal.png"/>
+</details>
+
+<details><summary> 내가 받은 오늘의 일기 목록 </summary>
+  <img src="https://github.com/Pive-Guyz/ondam-backend/blob/develop/document/ScreenDesign/diary/ReceivedDiaryPage.png"/>
+</details>
+
+<details><summary> 오늘의 일기 </summary>
+  <img src="https://github.com/Pive-Guyz/ondam-backend/blob/develop/document/ScreenDesign/diary/ReceivedDiary.png"/>
+</details>
+
+### 6. Reply
+<details><summary> 답장 작성창 </summary>
+  <img src="https://github.com/Pive-Guyz/ondam-backend/blob/develop/document/ScreenDesign/diary/WriteReplyModal.png"/>
+</details>
+
+<details><summary> 내가 보낸 답장 목록 </summary>
+  <img src="https://github.com/Pive-Guyz/ondam-backend/blob/develop/document/ScreenDesign/diary/MyReplyListPage.png"/>
+</details>
+
+<details><summary> 내가 보낸 답장 </summary>
+  <img src="https://github.com/Pive-Guyz/ondam-backend/blob/develop/document/ScreenDesign/diary/MyReply.png"/>
+</details>
+
+### 7. Report
 
 <br><br>
 
@@ -263,7 +318,7 @@
   <img src="https://github.com/Pive-Guyz/ondam-backend/blob/develop/document/PostmanPictureAPI/diary/delete_diary.png" width="600" />
 </details>
 
-### 6. Diary Record
+### 5-1. Diary Record
 <details><summary> 전체 일기 발송 기록 조회 </summary>
   <img src="https://github.com/Pive-Guyz/ondam-backend/blob/develop/document/PostmanPictureAPI/diaryRecord/select_all_diaryRecord.png" width="600" />
 </details>
@@ -288,7 +343,7 @@
   <img src="https://github.com/Pive-Guyz/ondam-backend/blob/develop/document/PostmanPictureAPI/diaryRecord/send_diary.png" width="600" />
 </details>
 
-### 7. Reply
+### 6. Reply
 <details><summary> 답장 전체 조회 </summary>
   <img src="https://github.com/Pive-Guyz/ondam-backend/blob/develop/document/PostmanPictureAPI/reply/select_all_reply.png" width="600" />
 </details>
@@ -313,7 +368,7 @@
   <img src="https://github.com/Pive-Guyz/ondam-backend/blob/develop/document/PostmanPictureAPI/reply/delete_reply.png" width="600" />
 </details>
 
-### 8. Report
+### 7. Report
 <details><summary> 신고 전체 조회 </summary>
   <img src="https://github.com/Pive-Guyz/ondam-backend/blob/develop/document/PostmanPictureAPI/report/all_report.png" width="600" />
 </details>

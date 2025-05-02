@@ -14,6 +14,48 @@
 
 # 📢 프로젝트 개요
 
+### 1. 프로젝트 소개
+
+**ON:DAM**은 상담사가 상담 내용을 빠르게 기록하고, 내담자의 감정을 AI가 분석하여 시각화해주는 플랫폼입니다.  
+상담 내용을 AI에게 전달하면 요약과 감정 흐름 분석이 자동으로 이루어집니다.  
+또한, 상담사들끼리 랜덤 일기를 통해 서로 교류하고 정서적 지지를 나눌 수 있습니다.  
+내담자의 감정 데이터와 상담 내용을 토대로 더 나은 상담을 이어갈 수 있도록 돕습니다.
+
+### 2. 프로젝트 필요성
+
+- 상담 기록과 정리에 대한 상담사의 부담  
+- 내담자의 감정을 객관적으로 파악하기 어려움  
+- 상담사 간 교류 부족으로 인한 정서적 소진  
+- 상담 기록을 효과적으로 관리하고 활용할 수 있는 시스템 필요
+
+### 3. 유사 서비스와 차별점
+
+| 항목 | <img src="https://github.com/Pive-Guyz/ondam-backend/blob/develop/document/Logo/ondam_logo.png?raw=true" width="100"/> <br/>ON:DAM | <img src="https://github.com/Pive-Guyz/ondam-backend/blob/develop/document/Logo/mindism_logo.png?raw=true" width="100"/> <br/>마음주의 Hub | <img src="https://github.com/Pive-Guyz/ondam-backend/blob/develop/document/Logo/mindiplus_logo.png?raw=true" width="200"/> <br/>마음플러스 |
+|------|---------------------------------|-----------------------------|----------------------------|
+| 주요 기능 | 상담 기록 요약, 감정 분석, 상담사 간 교류 | 상담 기록 관리, 권한 설정 | 상담 일정 관리, 내담자 관리 |
+| 대상 사용자 | 인증된 상담사 | 심리상담사 및 상담센터 | 상담사 및 상담센터 |
+| 상담사 지원 | 상담 기록 정리, 감정 분석, 정서적 교류 | 상담 기록 관리, 상담사 권한 설정 | 상담 일정 및 내담자 관리 |
+| 감정 분석 | 감정 키워드 기반 분석 및 시각화 | 없음 | 없음 |
+| 차별점 | AI 분석 + 상담사 교류 + 정서적 지지 | 권한 관리 중심 | 일정 및 내담자 관리 중심 |
+
+### 4. ON:DAM의 차별화 포인트
+
+- **AI 상담 요약 및 감정 분석**  
+  상담 내용을 AI가 자동으로 요약하고 감정을 분석해 내담자의 감정 흐름을 시각화하며, 리포트로 제공해 상담사의 이해와 상담 준비를 지원
+  
+- **정서적 교류를 위한 랜덤 일기**  
+  상담사 간 익명 일기를 통해 서로 자연스럽게 교류하고 정서적 지지를 주고받을 수 있는 기능 제공
+
+- **인증된 상담사만 사용 가능**  
+  자격증 확인 절차를 통해 검증된 상담사만 플랫폼을 이용 가능
+
+### 5. 기대 효과
+
+- 상담사의 업무 효율화 및 상담 품질 향상 
+- 내담자의 상담 데이터 기반 맞춤형 상담 가능
+- 상담사 간 교류를 통한 소진 방지 및 동료 지원 강화
+- 상담 데이터 자산화를 통한 서비스 고도화 기반 마련
+
 <br><br>
 
 # 🛠️기술 스택
@@ -44,6 +86,36 @@
 <br><br>
 
 # 💡 주요 기능
+
+### 1. 상담 기록 보조
+
+- 상담사는 상담 내용을 직접 입력하고 저장할 수 있습니다.  
+- 기록된 상담 데이터는 내담자별로 정리되어 상담사가 언제든 쉽게 확인할 수 있습니다.  
+- 상담 이력을 통해 상담 흐름을 파악하고, 상담 준비 시간을 줄일 수 있습니다.
+
+### 2. AI 상담 요약 및 감정 분석
+
+- 저장된 상담 기록을 AI가 자동으로 요약합니다.  
+- AI는 상담 내용을 바탕으로 감정 키워드를 추출하고 감정을 분석합니다.  
+- 분석 결과는 시각화되어 내담자의 감정 흐름을 한눈에 파악할 수 있도록 지원합니다.
+
+### 3. 감정 흐름 시각화
+
+- AI가 분석한 감정 데이터를 차트 형태로 제공합니다.  
+- 상담사는 내담자의 상담 과정 중 감정 변화를 쉽게 파악할 수 있습니다.  
+- 이를 통해 상담의 방향성을 설정하고 보다 효과적인 상담을 진행할 수 있습니다.
+
+### 4. 랜덤 일기
+
+- 상담사들은 익명으로 일기를 작성할 수 있습니다.  
+- 작성된 일기는 무작위로 다른 상담사들에게 전달되어 공감과 답장을 받을 수 있습니다.  
+- 이를 통해 상담사 간 자연스러운 정서적 교류와 지지를 경험할 수 있습니다.
+
+### 5. 인증된 상담사 전용
+
+- ON:DAM은 인증된 상담사만 사용할 수 있는 전용 서비스입니다.  
+- 자격증 확인 절차를 통해 전문성을 검증합니다.  
+- 이를 통해 안전하고 신뢰할 수 있는 상담 환경을 제공합니다.
 
 <br><br>
 
@@ -166,6 +238,22 @@
 </details>
 
 ### 7. Report
+<details><summary> 일기 신고 </summary>
+  <img src="https://github.com/Pive-Guyz/ondam-backend/blob/develop/document/ScreenDesign/report/report_diary.png?raw=true" width="100%" />
+</details>
+
+<details><summary> 신고된 일기 처리 </summary>
+  <img src="https://github.com/Pive-Guyz/ondam-backend/blob/develop/document/ScreenDesign/report/report_diary_process.png?raw=true" width="100%" />
+</details>
+
+<details><summary> 답장 신고 </summary>
+  <img src="https://github.com/Pive-Guyz/ondam-backend/blob/develop/document/ScreenDesign/report/report_reply.png?raw=true" width="100%" />
+</details>
+
+<details><summary> 신고된 답장 처리 </summary>
+  <img src="https://github.com/Pive-Guyz/ondam-backend/blob/develop/document/ScreenDesign/report/report_reply_process.png?raw=true" width="100%" />
+</details>
+
 
 <br><br>
 
@@ -596,6 +684,38 @@
 </details>
 
 ### 7. Report
+<details><summary> 받은 일기 신고 </summary>
+  <img src="https://github.com/Pive-Guyz/ondam-backend/blob/develop/document/APITest/report/report_diary.gif?raw=true"/>
+</details>
+
+<details><summary> 신고 목록 조회 </summary>
+  <img src="https://github.com/Pive-Guyz/ondam-backend/blob/develop/document/APITest/report/report_list.gif?raw=true"/>
+</details>
+
+<details><summary> 신고 상세 조회 </summary>
+  <img src="https://github.com/Pive-Guyz/ondam-backend/blob/develop/document/APITest/report/report_detail.gif?raw=true"/>
+</details>
+
+<details><summary> 신고 대상 콘텐츠 조회 </summary>
+  <img src="https://github.com/Pive-Guyz/ondam-backend/blob/develop/document/APITest/report/report_target_content.gif?raw=true"/>
+</details>
+
+<details><summary> 신고 처리상태 수정 </summary>
+  <img src="https://github.com/Pive-Guyz/ondam-backend/blob/develop/document/APITest/report/report_status_update.gif?raw=true"/>
+</details>
+
+<details><summary> 신고 승인된 일기 블라인드 처리 </summary>
+  <img src="https://github.com/Pive-Guyz/ondam-backend/blob/develop/document/APITest/report/report_diary_blind_approve.gif?raw=true"/>
+</details>
+
+<details><summary> 받은 답장 신고 </summary>
+  <img src="https://github.com/Pive-Guyz/ondam-backend/blob/develop/document/APITest/report/report_reply.gif?raw=true"/>
+</details>
+
+<details><summary> 신고 승인된 답장 블라인드 처리 </summary>
+  <img src="https://github.com/Pive-Guyz/ondam-backend/blob/develop/document/APITest/report/report_reply_blind_approve.gif?raw=true"/>
+</details>
+
 
 <br><br>
 
@@ -851,6 +971,32 @@ spec:
 <br><br>
 
 # 🔜 향후 확장 계획
+
+### 1. 실시간 상담 분석
+
+- 상담 중 AI에게 상담 내용을 실시간으로 전달하고 즉시 감정 분석 결과를 받아볼 수 있도록 기능을 확장할 계획입니다.  
+- 이를 통해 상담사는 내담자의 감정 상태를 상담 중 바로 파악하고 효과적인 대응이 가능해집니다.
+
+### 2. STT (Speech to Text) 연동
+
+- 상담 내용을 음성으로 입력하면 자동으로 텍스트로 변환하는 기능을 도입할 예정입니다.  
+- 상담사가 메모 없이 상담에 집중할 수 있으며, 청각장애 상담사도 실시간 상담 내용을 쉽게 확인할 수 있습니다.
+
+### 3. 사진 기반 상담 기록 정리 (OCR)
+
+- 상담 중 작성한 메모나 노트를 사진으로 업로드하면  
+  AI가 이미지 내 텍스트를 인식하여 상담 기록으로 자동 정리하는 기능을 추가할 예정입니다.  
+- 상담사의 기록 부담을 더욱 줄여주고 기록의 일관성을 높일 수 있습니다.
+
+### 4. AI 분석 결과 고도화 및 리포트 강화
+
+- 축적된 상담 데이터를 바탕으로 내담자별 감정 변화 패턴 분석과 상담 리포트 기능을 강화할 예정입니다.  
+- 이를 통해 상담사는 더 정교하고 맞춤화된 상담 전략을 수립할 수 있습니다.
+
+### 5. 상담사 커뮤니티 기능
+
+- 랜덤 일기를 넘어, 상담사 간 의견 교환과 지식을 나눌 수 있는 커뮤니티 기능을 도입할 계획입니다.  
+- 상호 지지를 통해 정서적 안정과 전문성 향상을 도울 수 있습니다.
 
 <br><br>
 

@@ -5,7 +5,22 @@
 </div>
 
 ## 👨‍💻 DEVELOPERS
-
+<table>
+  <tr>
+    <td><img src="https://github.com/Pive-Guyz/ondam-backend/blob/develop/document/member/red.png?raw=true" width="150" height="150"/></td>
+    <td><img src="https://github.com/Pive-Guyz/ondam-backend/blob/develop/document/member/green.png?raw=true" width="150" height="150"/></td>
+    <td><img src="https://github.com/Pive-Guyz/ondam-backend/blob/develop/document/member/blue.png?raw=true" width="150" height="150"/></td>
+    <td><img src="https://github.com/Pive-Guyz/ondam-backend/blob/develop/document/member/yellow.png?raw=true" width="150" height="150"/></td>
+    <td><img src="https://github.com/Pive-Guyz/ondam-backend/blob/develop/document/member/pink.png?raw=true" width="150" height="150"/></td>
+  </tr>
+  <tr>
+    <td>:crown:곽우석</td>
+    <td>김석희</td>
+    <td>서민종</td>
+    <td>이상모</td>
+    <td>최혜민</td>
+  </tr>
+</table>
 <br><br>
 
 # 🔖 목차

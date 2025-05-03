@@ -157,10 +157,10 @@
 
 # 🗃️ DB 모델링
 ## 논리 모델링
-
+<img src="https://github.com/Pive-Guyz/ondam-backend/blob/develop/document/Modeling/%EB%85%BC%EB%A6%AC%20%EC%98%A8%EB%8B%B4.png"/>
 
 ## 물리 모델링
-
+<img src="https://github.com/Pive-Guyz/ondam-backend/blob/develop/document/Modeling/%EB%AC%BC%EB%A6%AC%20%EC%98%A8%EB%8B%B4.png"/>
 <br><br>
 
 # 🖼️ 화면 설계

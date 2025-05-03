@@ -24,7 +24,6 @@
 <br><br>
 
 # 🔖 목차
-# 🔖 목차
 
 - [💕 ON:DAM](#-ondam)
 - [👨‍💻 DEVELOPERS](#-developers)

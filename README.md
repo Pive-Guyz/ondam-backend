@@ -126,7 +126,7 @@
 <br><br>
 
 # 🪄 시스템 아키텍처
-
+  <img src="https://github.com/Pive-Guyz/ondam-backend/blob/develop/document/ProjectArchitecture/ondam_project_architecture.png?raw=true"/>
 <br><br>
 
 # 💡 주요 기능

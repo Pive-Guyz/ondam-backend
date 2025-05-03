@@ -174,6 +174,17 @@
 </details>
 
 ### 1. Member
+<details><summary> 로그인 / 회원가입 </summary>
+  <img src="https://github.com/Pive-Guyz/ondam-backend/blob/develop/document/ScreenDesign/member/%ED%9A%8C%EC%9B%90,%EB%A1%9C%EA%B7%B8%EC%9D%B8.png?raw=true"/>
+</details>
+
+<details><summary> 관리자 프로필 / 회원 관리 </summary>
+  <img src="https://github.com/Pive-Guyz/ondam-backend/blob/develop/document/ScreenDesign/member/%EA%B4%80%EB%A6%AC%EC%9E%90%ED%8E%98%EC%9D%B4%EC%A7%80.png?raw=true"/>
+</details>
+
+<details><summary> 회원 프로필 </summary>
+  <img src="https://github.com/Pive-Guyz/ondam-backend/blob/develop/document/ScreenDesign/member/%ED%9A%8C%EC%9B%90%ED%8E%98%EC%9D%B4%EC%A7%80.png?raw=true"/>
+</details>
 
 ### 2. Counselee
 <details><summary> 내담자 등록 </summary>

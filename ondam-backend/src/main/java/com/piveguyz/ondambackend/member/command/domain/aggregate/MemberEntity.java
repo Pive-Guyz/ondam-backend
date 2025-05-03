@@ -11,6 +11,7 @@ import java.util.Date;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
+@ToString
 @Table(name="member")
 public class MemberEntity {
 
@@ -32,10 +33,10 @@ public class MemberEntity {
     private String birthday;
 
     @Column(name = "created_at", nullable = false)
-    private LocalDateTime createdAt= LocalDateTime.now();
+    private LocalDateTime createdAt = LocalDateTime.now();
 
     @Column(name = "deleted_at", nullable = true)
-    private Date deletedAt;
+    private LocalDateTime deletedAt;
 
     @Column(name = "phone", nullable = false)
     private String phone;

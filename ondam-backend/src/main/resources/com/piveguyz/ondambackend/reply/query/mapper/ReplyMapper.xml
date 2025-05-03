@@ -28,6 +28,7 @@
             sender_id,
             receiver_id
         FROM reply
+        WHERE ISNULL(deleted_at) AND is_blinded = "N"
         ORDER BY created_at DESC;
     </select>
 
@@ -43,7 +44,8 @@
             sender_id,
             receiver_id
         FROM reply
-        WHERE id = #{id}
+        WHERE ISNULL(deleted_at) AND is_blinded = "N"
+        AND id = #{id}
         ORDER BY created_at DESC;
     </select>
 
@@ -60,7 +62,8 @@
             reply.receiver_id,
             diary_record.diary_id
         FROM reply JOIN diary_record ON reply.diary_record_id = diary_record.id
-        WHERE diary_record.diary_id = #{diaryId}
+        WHERE ISNULL(deleted_at) AND is_blinded = "N"
+          AND diary_record.diary_id = #{diaryId}
         ORDER BY created_at DESC;
     </select>
 
@@ -76,7 +79,8 @@
             sender_id,
             receiver_id
         FROM reply
-        WHERE sender_id = #{senderId}
+        WHERE ISNULL(deleted_at) AND is_blinded = "N"
+          AND sender_id = #{senderId}
         ORDER BY created_at DESC;
     </select>
 </mapper>

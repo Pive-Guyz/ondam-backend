@@ -11,5 +11,13 @@ public interface MemberService {
 
     void changePassword(Long id, ChangePasswordDTO newPassword);
 
+
     void updateAuthority(UpdateAuthorityDTO updateAuthorityDTO);
+
+    void plusPoint(Long id);
+
+    void minusPoint(Long id);
+
+    String resetPasswordWithTemp(String name, String email);
+
 }

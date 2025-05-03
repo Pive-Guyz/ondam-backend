@@ -49,9 +49,22 @@ public class MemberCommandController {
         return ResponseEntity.ok("비밀번호가 성공적으로 변경되었습니다.");
     }
 
+
     @PostMapping("/update-authority")
     public ResponseEntity<String> updateAuthority(@RequestBody UpdateAuthorityDTO dto) {
         memberService.updateAuthority(dto);
         return ResponseEntity.ok("권한이 변경되었습니다.");
+
+    @GetMapping("/findPasswordByNameAndEmail")
+    public ResponseEntity<String> findPasswordByNameAndEmail(
+            @RequestParam String name,
+            @RequestParam String email) {
+
+        String tempPassword = memberService.resetPasswordWithTemp(name, email);
+        if (tempPassword == null) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("일치하는 회원이 없습니다.");
+        }
+        return ResponseEntity.ok(tempPassword); // 평문 반환
+
     }
 }

@@ -1,5 +1,6 @@
 package com.piveguyz.ondambackend.analysis.config;
 
+import jakarta.annotation.PostConstruct;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -12,7 +13,6 @@ public class ChatGPTConfig {
 
     @Value("${openai.api.key}")
     private String gptAPIKey;
-
 
     @Bean
     public RestTemplate restTemplate() {

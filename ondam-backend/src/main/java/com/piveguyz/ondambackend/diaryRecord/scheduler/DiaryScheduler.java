@@ -26,20 +26,15 @@ public class DiaryScheduler {
     // 매일 새벽 12시 (cron: 초 분 시 일 월 요일)
     @Scheduled(cron = "0 0 0 * * *")
     public void sendYesterdayDiaries() {
+        // 💥 기존 일기 전송 기록 모두 만료 처리
+        int expiredCount = diaryRecordService.expireAllDiaryRecords();
+        System.out.println("만료 처리된 일기 레코드 수: " + expiredCount);
+
+        // 1. 어제 일기 전송
         List<DiaryQueryDTO> diaryQueryDTOList = diaryQueryService.selectAllDiaries();
-
         LocalDate yesterday = LocalDate.now().minusDays(1);
-
         for (DiaryQueryDTO diaryQueryDTO : diaryQueryDTOList) {
             if (diaryQueryDTO.getCreatedAt().toLocalDate().isEqual(yesterday)) {
-                diaryRecordService.sendDiary(diaryQueryDTO.getId());
-            }
-        }
-
-        LocalDate today = LocalDate.now(); // 오늘 날짜
-
-        for (DiaryQueryDTO diaryQueryDTO : diaryQueryDTOList) {
-            if (diaryQueryDTO.getCreatedAt().toLocalDate().isEqual(today)) { // 오늘 쓴 일기도 보내게
                 diaryRecordService.sendDiary(diaryQueryDTO.getId());
             }
         }

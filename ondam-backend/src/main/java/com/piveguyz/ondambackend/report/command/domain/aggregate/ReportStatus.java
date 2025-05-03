@@ -5,8 +5,8 @@ import lombok.Getter;
 @Getter
 public enum ReportStatus {
 	PENDING(0),
-	REJECTED(1),
-	APPROVED(2);
+	APPROVED(1),
+	REJECTED(2);
 
 	private final int value;
 

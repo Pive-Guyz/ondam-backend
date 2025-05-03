@@ -30,6 +30,7 @@ public class CounselCommandServiceImpl implements CounselCommandService {
                 .content(CounselContent.from(request.getContent().getValue()))
                 .opinion(CounselOpinion.from(request.getOpinion().getValue()))
                 .weather(Weather.from(request.getWeather().getValue()))
+                .counselType(request.getCounselType())
                 .time(CounselTime.from(request.getTime().getValue()))
                 .counseleeId(request.getCounseleeId())
                 .memberId(request.getMemberId())
@@ -48,7 +49,8 @@ public class CounselCommandServiceImpl implements CounselCommandService {
                 CounselOpinion.from(request.getOpinion().getValue()),
                 Weather.from(request.getWeather().getValue()),
                 CounselTime.from(request.getTime().getValue()),
-                request.getNextCreatedAt()
+                request.getNextCreatedAt(),
+                request.getCounselType()
         );
 
         return CounselCommandDTO.Response.from(counsel);

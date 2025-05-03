@@ -13,15 +13,18 @@ public class EmotionAnalysisDTO {
     private String emotion;
     private String evidence;
     private String reason;
+    private String emotionCategoryName;
 
     @Builder
     public EmotionAnalysisDTO(Long id,
                               String emotion,
                               String evidence,
-                              String reason) {
+                              String reason,
+                              String emotionCategoryName) {
         this.id = id;
         this.emotion = emotion;
         this.evidence = evidence;
         this.reason = reason;
+        this.emotionCategoryName = emotionCategoryName;
     }
 }

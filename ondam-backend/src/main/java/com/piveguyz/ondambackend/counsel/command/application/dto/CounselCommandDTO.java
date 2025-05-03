@@ -32,6 +32,9 @@ public class CounselCommandDTO {
         @NotNull(message = "상담 시간은 필수입니다")
         private CounselTime time;
 
+        @NotNull(message = "상담 유형은 필수입니다")
+        private String counselType;
+
         @NotNull(message = "내담자 ID는 필수입니다")
         private Long counseleeId;
 
@@ -41,13 +44,14 @@ public class CounselCommandDTO {
         private LocalDateTime nextCreatedAt;
         
         public static CreateRequest of(String content, String opinion, String weather, 
-                                     String time, Long counseleeId, Long memberId,
+                                     String time, Long counseleeId, Long memberId, String counselType,
                                      LocalDateTime nextCreatedAt) {
             return CreateRequest.builder()
                     .content(CounselContent.from(content))
                     .opinion(CounselOpinion.from(opinion))
                     .weather(Weather.from(weather))
                     .time(CounselTime.from(time))
+                    .counselType(counselType)
                     .counseleeId(counseleeId)
                     .memberId(memberId)
                     .nextCreatedAt(nextCreatedAt)
@@ -69,17 +73,21 @@ public class CounselCommandDTO {
         @NotNull(message = "날씨 정보는 필수입니다")
         private Weather weather;
 
+        @NotNull(message = "상담 유형은 필수입니다")
+        private String counselType;
+
         @NotNull(message = "상담 시간은 필수입니다")
         private CounselTime time;
 
         private LocalDateTime nextCreatedAt;
         
         public static UpdateRequest of(String content, String opinion, String weather,
-                                     String time, LocalDateTime nextCreatedAt) {
+                                     String time, LocalDateTime nextCreatedAt, String counselType) {
             return UpdateRequest.builder()
                     .content(CounselContent.from(content))
                     .opinion(CounselOpinion.from(opinion))
                     .weather(Weather.from(weather))
+                    .counselType(counselType)
                     .time(CounselTime.from(time))
                     .nextCreatedAt(nextCreatedAt)
                     .build();
@@ -105,6 +113,7 @@ public class CounselCommandDTO {
         private String opinion;
         private String weather;
         private String time;
+        private String counselType;
         private Long counseleeId;
         private Long memberId;
         private LocalDateTime createdAt;
@@ -118,6 +127,7 @@ public class CounselCommandDTO {
                     .opinion(entity.getOpinion().getValue())
                     .weather(entity.getWeather().getValue())
                     .time(entity.getTime().getValue())
+                    .counselType(entity.getCounselType())
                     .counseleeId(entity.getCounseleeId())
                     .memberId(entity.getMemberId())
                     .createdAt(entity.getCreatedAt())

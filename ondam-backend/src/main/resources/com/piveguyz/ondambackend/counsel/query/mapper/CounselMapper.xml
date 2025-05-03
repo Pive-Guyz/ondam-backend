@@ -10,6 +10,7 @@
         <result property="opinion" column="opinion"/>
         <result property="weather" column="weather"/>
         <result property="time" column="time"/>
+        <result property="counselType" column="counsel_type"/>
         <result property="deletedAt" column="deleted_at"/>
         <result property="counseleeId" column="counselee_id"/>
         <result property="memberId" column="member_id"/>
@@ -25,6 +26,7 @@
         c.opinion,
         c.weather,
         c.time,
+        c.counsel_type,
         c.deleted_at,
         c.counselee_id,
         c.member_id,

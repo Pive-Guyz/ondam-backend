@@ -4,7 +4,7 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="com.piveguyz.ondambackend.member.query.mapper.MemberMapper">
-    <resultMap id="MemberResultMap" type="com.piveguyz.ondambackend.member.query.dto.MemberDTO">
+    <resultMap id="MemberResultMap" type="com.piveguyz.ondambackend.member.query.dto.MemberQueryDTO">
         <id column="id" property="id"/>
         <result column="name" property="name"/>
         <result column="email" property="email"/>
@@ -25,4 +25,42 @@
         SELECT *
         FROM member;
     </select>
+
+    <select id="findMemberById" resultMap="MemberResultMap">
+        SELECT * FROM member
+        WHERE id = #{id} AND deleted_at IS NULL
+    </select>
+
+    <select id="findMemberByNameAndPhone" resultMap="MemberResultMap">
+        SELECT *
+        FROM member
+        WHERE name = #{name}
+          AND phone = #{phone}
+          AND deleted_at IS NULL
+    </select>
+
+    <select id="findMemberByNameAndEmail" resultMap="MemberResultMap">
+        SELECT *
+        FROM member
+        WHERE name = #{name}
+          AND email = #{email}
+          AND deleted_at IS NULL
+    </select>
+
+    <select id="login" resultMap="MemberResultMap">
+        SELECT *
+        FROM member
+        WHERE email = #{email}
+          AND password = #{password}
+          AND deleted_at IS NULL
+    </select>
+
+    <select id="findMemberByEmailAndPassword" resultMap="MemberResultMap">
+        SELECT *
+        FROM member
+        WHERE email = #{email}
+          AND password = #{password}
+          AND deleted_at IS NULL
+    </select>
+
 </mapper>

@@ -31,9 +31,9 @@ public class AnalysisServiceImpl implements AnalysisService {
                              - 내담자의 말을 고민 시기(period), 고민 장소(place), 고민 상황(situation), 이유(reason), 흐름(flow), 결심(determination)으로 정리해주세요.
                             \s
                              2. 감정 분석 (`emotion_analysis`):
-                             - 내담자의 말에서 감정(e.g. 불안, 무기력, 고립감 등)을 추출하고, 그 감정의 근거가 된 발화(evidence), 감정을 추출한 이유(reason)를 작성해주세요.
+                             - 내담자의 말에서 감정을 추출하고, 그 감정의 근거가 된 발화(evidence), 감정을 추출한 이유(reason)를 작성해주세요.
                              - 동일한 감정이 대화 중 여러 번 표현되었다면, 각 표현을 개별적으로 모두 추출해 주세요. (중복 감정도 각각 별도로 작성합니다.)
-                             - 감정은 반드시 다음의 감정 목록 중 5개 이상여야 합니다: 기쁨, 안도, 감사, 감동, 기대, 희망, 편안함, 자신감, 활력, 불안, 분노, 짜증, 우울, 슬픔, 외로움, 수치심, 죄책감, 후회, 좌절, 무기력, 혼란, 멍함, 무감각, 갈등, 복잡함, 모호함, 회복, 안정감, 수용, 성장, 용기, 극복, 해소, 고립감, 연결감, 서운함, 이해받음, 부담감
+                             - 감정은 반드시 다음의 감정 목록에서만 나와야 하고 정확히 해당된 단어가 5개 ~ 10개여야 합니다: 기쁨, 안도, 감사, 감동, 기대, 희망, 편안함, 자신감, 활력, 불안, 분노, 짜증, 우울, 슬픔, 외로움, 수치심, 죄책감, 후회, 좌절, 무기력, 혼란, 멍함, 무감각, 갈등, 복잡함, 모호함, 회복, 안정감, 수용, 성장, 용기, 극복, 해소, 고립감, 연결감, 서운함, 이해받음, 부담감
                             \s
                              3. 효과적 발화 (`effective_statement`):
                              - 상담자의 말 중 정서적 안정 및 동기 부여에 효과적인 발화를 1개 선택해 주세요.
@@ -172,7 +172,8 @@ public class AnalysisServiceImpl implements AnalysisService {
     @Transactional
     public void askGpt(ChatCompletionDTO chatCompletionDto) throws JsonProcessingException {
         log.info("ChatGPT 프롬프트 실행");
-
+        log.info("💬 GPT 요청 메시지: {}", objectMapper.writeValueAsString(chatCompletionDto));
+        log.info("💬 message size: {}", chatCompletionDto.getMessages() != null ? chatCompletionDto.getMessages().size() : "null");
         List<ChatRequestMsgDTO> fullMessages = List.of(
                 ChatRequestMsgDTO.builder()
                         .role("system")
@@ -185,6 +186,7 @@ public class AnalysisServiceImpl implements AnalysisService {
                 .model(openaiModel)
                 .messages(fullMessages)
                 .build();
+        log.info("💬 GptRequestDTO = {}", objectMapper.writeValueAsString(gptRequest));
 
         HttpHeaders headers = chatGPTConfig.httpHeaders();
         HttpEntity<GptRequestDTO> requestEntity = new HttpEntity<>(gptRequest, headers);

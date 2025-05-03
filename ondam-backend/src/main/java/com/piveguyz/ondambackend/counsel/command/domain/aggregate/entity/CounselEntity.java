@@ -39,6 +39,8 @@ public class CounselEntity {
     @AttributeOverride(name = "value", column = @Column(name = "weather", nullable = false))
     private Weather weather;
 
+    private String counselType;
+
     @Embedded
     @AttributeOverride(name = "value", column = @Column(name = "time", nullable = false))
     private CounselTime time;
@@ -53,11 +55,12 @@ public class CounselEntity {
 
     @Builder
     public CounselEntity(CounselContent content, CounselOpinion opinion, Weather weather, 
-                        CounselTime time, Long counseleeId, Long memberId, LocalDateTime nextCreatedAt) {
+                        CounselTime time, Long counseleeId, Long memberId, LocalDateTime nextCreatedAt, String counselType) {
         this.content = content;
         this.opinion = opinion;
         this.weather = weather;
         this.time = time;
+        this.counselType = counselType;
         this.counseleeId = counseleeId;
         this.memberId = memberId;
         this.createdAt = LocalDateTime.now();
@@ -66,10 +69,11 @@ public class CounselEntity {
     }
 
     public void update(CounselContent content, CounselOpinion opinion, Weather weather, 
-                      CounselTime time, LocalDateTime nextCreatedAt) {
+                      CounselTime time, LocalDateTime nextCreatedAt, String counselType) {
         this.content = content;
         this.opinion = opinion;
         this.weather = weather;
+        this.counselType = counselType;
         this.time = time;
         this.nextCreatedAt = nextCreatedAt;
     }

@@ -14,62 +14,67 @@
 
     <select id="findAllDiaryRecord" resultMap="DiaryRecordResultMap">
         SELECT
-            id,
-            diary_id,
-            sender_id,
-            receiver_id,
-            is_expired
-        FROM diary_record
-        WHERE is_expired = 'N';
+            diary_record.id,
+            diary_record.diary_id,
+            diary_record.sender_id,
+            diary_record.receiver_id,
+            diary_record.is_expired
+        FROM diary_record JOIN diary ON diary_record.diary_id = diary.id
+        WHERE ISNULL(diary.deleted_at) AND diary.is_blinded = 'N'
+          AND diary_record.is_expired = 'N';
     </select>
 
     <select id="findDiaryRecordById" resultMap="DiaryRecordResultMap">
         SELECT
-            id,
-            diary_id,
-            sender_id,
-            receiver_id,
-            is_expired
-        FROM diary_record
-        WHERE is_expired = 'N'
-        AND id = #{id};
+            diary_record.id,
+            diary_record.diary_id,
+            diary_record.sender_id,
+            diary_record.receiver_id,
+            diary_record.is_expired
+        FROM diary_record JOIN diary ON diary_record.diary_id = diary.id
+        WHERE ISNULL(diary.deleted_at) AND diary.is_blinded = 'N'
+          AND diary_record.is_expired = 'N'
+          AND diary_record.id = #{id};
     </select>
 
     <select id="findDiaryRecordByDiaryId" resultMap="DiaryRecordResultMap">
         SELECT
-            id,
-            diary_id,
-            sender_id,
-            receiver_id,
-            is_expired
-        FROM diary_record
-        WHERE is_expired = 'N'
-          AND diary_id = #{diaryId};
+            diary_record.id,
+            diary_record.diary_id,
+            diary_record.sender_id,
+            diary_record.receiver_id,
+            diary_record.is_expired
+        FROM diary_record JOIN diary ON diary_record.diary_id = diary.id
+        WHERE ISNULL(diary.deleted_at) AND diary.is_blinded = 'N'
+          AND diary_record.is_expired = 'N'
+          AND diary_record.diary_id = #{diaryId};
     </select>
 
     <select id="findDiaryRecordByReceiverId" resultMap="DiaryRecordResultMap">
         SELECT
-            id,
-            diary_id,
-            sender_id,
-            receiver_id,
-            is_expired
-        FROM diary_record
-        WHERE is_expired = 'N'
-        AND receiver_id = #{receiverId};
+            diary_record.id,
+            diary_record.diary_id,
+            diary_record.sender_id,
+            diary_record.receiver_id,
+            diary_record.is_expired
+        FROM diary_record JOIN diary ON diary_record.diary_id = diary.id
+        WHERE ISNULL(diary.deleted_at) AND diary.is_blinded = 'N'
+          AND diary_record.is_expired = 'N'
+          AND diary_record.receiver_id = #{receiverId};
     </select>
 
     <select id="findDiaryRecordByDiaryIdAndReceiverId" resultMap="DiaryRecordResultMap">
         SELECT
-            id,
-            diary_id,
-            sender_id,
-            receiver_id,
-            is_expired
-        FROM diary_record
-        WHERE is_expired = 'N'
-          AND diary_id = #{diaryId}
-          AND receiver_id = #{receiverId};
+            diary_record.id,
+            diary_record.diary_id,
+            diary_record.sender_id,
+            diary_record.receiver_id,
+            diary_record.is_expired
+        FROM diary_record JOIN diary ON diary_record.diary_id = diary.id
+        WHERE ISNULL(diary.deleted_at) AND diary.is_blinded = 'N'
+          AND diary_record.is_expired = 'N'
+          AND diary_record.diary_id = #{diaryId}
+          AND diary_record.receiver_id = #{receiverId};
     </select>
 
 </mapper>

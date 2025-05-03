@@ -17,6 +17,7 @@ public class CounselQueryDTO {
     private String opinion;
     private String weather;
     private String time;
+    private String counselType;
     private LocalDateTime deletedAt;
     private Long counseleeId;
     private Long memberId;

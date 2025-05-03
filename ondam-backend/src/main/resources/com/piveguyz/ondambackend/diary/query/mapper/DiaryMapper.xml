@@ -24,6 +24,7 @@
             is_blinded,
             member_id
         FROM diary
+        WHERE isNull(deleted_at) AND is_blinded = 'N'
         ORDER BY created_at DESC;
     </select>
 

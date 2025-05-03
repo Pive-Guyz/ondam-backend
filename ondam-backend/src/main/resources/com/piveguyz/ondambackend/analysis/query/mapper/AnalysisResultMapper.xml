@@ -77,9 +77,11 @@
         SELECT ea.id,
                e.name AS emotion,
                ea.evidence,
-               ea.reason
+               ea.reason,
+               ec.name AS emotionCategoryName
         FROM emotion_analysis ea
         JOIN emotion e ON ea.emotion_id = e.id
+        JOIN emotion_category ec ON e.emotion_category_id = ec.id
        WHERE ea.analysis_id = #{analysisId}
     </select>
 </mapper>

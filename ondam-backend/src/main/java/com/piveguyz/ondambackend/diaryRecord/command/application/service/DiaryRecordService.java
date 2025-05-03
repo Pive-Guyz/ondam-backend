@@ -6,8 +6,8 @@ import com.piveguyz.ondambackend.diaryRecord.command.domain.aggregate.DiaryRecor
 import com.piveguyz.ondambackend.diaryRecord.command.domain.repository.DiaryRecordRepository;
 import com.piveguyz.ondambackend.diaryRecord.query.dto.DiaryRecordQueryDTO;
 import com.piveguyz.ondambackend.diaryRecord.query.service.DiaryRecordQueryService;
-import com.piveguyz.ondambackend.member.query.dto.MemberDTO;
-import com.piveguyz.ondambackend.member.query.service.MemberService;
+import com.piveguyz.ondambackend.member.query.dto.MemberQueryDTO;
+import com.piveguyz.ondambackend.member.query.service.MemberQueryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -18,24 +18,24 @@ public class DiaryRecordService {
     private final DiaryQueryService diaryQueryService;
     private final DiaryRecordQueryService diaryRecordQueryService;
     private final DiaryRecordRepository diaryRecordRepository;
-    private final MemberService memberService;
+    private final MemberQueryService memberQueryService;
 
     @Autowired
-    public DiaryRecordService(DiaryQueryService diaryQueryService, DiaryRecordQueryService diaryRecordQueryService, DiaryRecordRepository diaryRecordRepository, MemberService memberService) {
+    public DiaryRecordService(DiaryQueryService diaryQueryService, DiaryRecordQueryService diaryRecordQueryService, DiaryRecordRepository diaryRecordRepository, MemberQueryService memberQueryService) {
         this.diaryQueryService = diaryQueryService;
         this.diaryRecordQueryService = diaryRecordQueryService;
         this.diaryRecordRepository = diaryRecordRepository;
-        this.memberService = memberService;
+        this.memberQueryService = memberQueryService;
     }
 
     public boolean sendDiary(Long diaryId) {
         int attempt = 0;
         int Maxattempt = 100;
 
-        List<MemberDTO> allMembers = memberService.selectAllMembers(); // 회원 전부 조회
+        List<MemberQueryDTO> allMembers = memberQueryService.selectAllMembers(); // 회원 전부 조회
         List<Long> availableMemberIds = allMembers.stream()
                 .filter(member -> "N".equals(member.getIsDiaryBlocked())) // isDiaryBlocked == "N" 인 회원만
-                .map(MemberDTO::getId) // id만 뽑음
+                .map(MemberQueryDTO::getId) // id만 뽑음
                 .toList();
 
         if (availableMemberIds.isEmpty()) {
@@ -45,7 +45,10 @@ public class DiaryRecordService {
         while (attempt <= Maxattempt) {
             attempt++;
             List<DiaryRecordQueryDTO> diaryRecordQueryDTOList = diaryRecordQueryService.selectAllDiaryRecord();
-            List<DiaryQueryDTO> diaryQueryDTOList = diaryQueryService.selectAllDiaries();
+            List<DiaryQueryDTO> diaryQueryDTOList = diaryQueryService.selectAllDiaries().stream()
+                    .filter(diary -> diary.getDeletedAt() == null)
+                    .filter(diary -> !"Y".equals(diary.getIsBlinded()))
+                    .toList();
 
             if (diaryRecordQueryDTOList.size() == diaryQueryDTOList.size() * 3) { // 모든 일기 다 배분 완료
                 break;
@@ -80,6 +83,7 @@ public class DiaryRecordService {
             diaryRecord.setDiaryId(diaryId);
             diaryRecord.setSenderId(senderId);
             diaryRecord.setReceiverId(receiverId);
+            diaryRecord.setIsExpired("N");
             try {
                 diaryRecordRepository.save(diaryRecord);
             } catch (Exception e) {
@@ -87,5 +91,9 @@ public class DiaryRecordService {
             }
         }
         return true;
+    }
+
+    public int expireAllDiaryRecords() {
+        return diaryRecordRepository.expireAllDiaryRecords();
     }
 }

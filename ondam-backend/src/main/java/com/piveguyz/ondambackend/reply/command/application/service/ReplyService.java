@@ -2,15 +2,13 @@ package com.piveguyz.ondambackend.reply.command.application.service;
 
 
 
-import com.piveguyz.ondambackend.diary.query.dto.DiaryQueryDTO;
-import com.piveguyz.ondambackend.diary.query.service.DiaryQueryService;
 import com.piveguyz.ondambackend.diaryRecord.query.dto.DiaryRecordQueryDTO;
 import com.piveguyz.ondambackend.diaryRecord.query.service.DiaryRecordQueryService;
+import com.piveguyz.ondambackend.member.command.application.service.MemberService;
 import com.piveguyz.ondambackend.reply.command.application.dto.ReplyDTO;
 import com.piveguyz.ondambackend.reply.command.domain.aggregate.Reply;
 import com.piveguyz.ondambackend.reply.command.domain.repository.ReplyRepository;
 import com.piveguyz.ondambackend.reply.query.dto.ReplyQueryDTO;
-import com.piveguyz.ondambackend.reply.query.mapper.ReplyMapper;
 import com.piveguyz.ondambackend.reply.query.service.ReplyQueryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -20,29 +18,23 @@ import java.time.LocalDateTime;
 @Service
 public class ReplyService {
     private final ReplyRepository replyRepository;
-    private final ReplyMapper replyMapper;
     private final ReplyQueryService replyQueryService;
-    private final DiaryQueryService diaryQueryService;
     private final DiaryRecordQueryService diaryRecordQueryService;
+    private final MemberService memberService;
 
     @Autowired
-    public ReplyService(ReplyRepository replyRepository, ReplyMapper replyMapper, ReplyQueryService replyQueryService, DiaryQueryService diaryQueryService, DiaryRecordQueryService diaryRecordQueryService) {
+    public ReplyService(ReplyRepository replyRepository, ReplyQueryService replyQueryService, DiaryRecordQueryService diaryRecordQueryService, MemberService memberService) {
         this.replyRepository = replyRepository;
-        this.replyMapper = replyMapper;
         this.replyQueryService = replyQueryService;
-        this.diaryQueryService = diaryQueryService;
         this.diaryRecordQueryService = diaryRecordQueryService;
+        this.memberService = memberService;
     }
 
     public boolean writeReply(ReplyDTO replyDTO) {
         Long diaryRecordId = replyDTO.getDiaryRecordId();
         DiaryRecordQueryDTO diaryRecordQueryDTO = diaryRecordQueryService.selectDiaryRecordById(diaryRecordId);
-        System.out.println("replyDTO = " + replyDTO);
-        System.out.println("diaryRecordId = " + diaryRecordId);
-        System.out.println("diaryRecordQueryDTO = " + diaryRecordQueryDTO);
         Long senderId = diaryRecordQueryDTO.getReceiverId();
         Long receiverId = diaryRecordQueryDTO.getSenderId();
-
 
         Reply reply = new Reply();
         reply.setTitle(replyDTO.getTitle());
@@ -56,6 +48,7 @@ public class ReplyService {
 
         try {
             replyRepository.save(reply);
+            memberService.plusPoint(senderId);      // 10점 추가
             return true;
         } catch (Exception e) {
             return false;

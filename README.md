@@ -635,6 +635,33 @@
 # ✍🏻 API TEST
 
 ### 1. Member
+<details><summary> 회원가입 </summary>
+  <img src="https://github.com/Pive-Guyz/ondam-backend/blob/develop/document/APITest/member/%ED%9A%8C%EC%9B%90%EA%B0%80%EC%9E%85.gif?raw=true" width="800" />
+</details>
+<details><summary> 이메일 찾기 </summary>
+  <img src="https://github.com/Pive-Guyz/ondam-backend/blob/develop/document/APITest/member/%EC%9D%B4%EB%A9%94%EC%9D%BC%EC%B0%BE%EA%B8%B0.gif?raw=true" width="800"/>
+</details>
+<details><summary> 비밀번호 찾기 </summary>
+  <img src="https://github.com/Pive-Guyz/ondam-backend/blob/develop/document/APITest/member/%EB%B9%84%EB%B0%80%EB%B2%88%ED%98%B8%EC%B0%BE%EA%B8%B0.gif?raw=true" width="800" />
+</details>
+<details><summary> 로그인 </summary>
+  <img src="https://github.com/Pive-Guyz/ondam-backend/blob/develop/document/APITest/member/%EB%A1%9C%EA%B7%B8%EC%9D%B8.gif?raw=true" width="800" />
+</details>
+<details><summary> 회원 비밀번호 변경 </summary>
+  <img src="https://github.com/Pive-Guyz/ondam-backend/blob/develop/document/APITest/member/%ED%9A%8C%EC%9B%90%20%EB%B9%84%EB%B0%80%EB%B2%88%ED%98%B8%20%EB%B3%80%EA%B2%BD.gif?raw=true" width="800" />
+</details>
+<details><summary> 회원 탈퇴 </summary>
+  <img src="https://github.com/Pive-Guyz/ondam-backend/blob/develop/document/APITest/member/%ED%9A%8C%EC%9B%90%20%ED%83%88%ED%87%B4.gif?raw=true" width="800" />
+</details>
+<details><summary> 관리자 프로필 </summary>
+  <img src="https://github.com/Pive-Guyz/ondam-backend/blob/develop/document/APITest/member/%EA%B4%80%EB%A6%AC%EC%9E%90%20%ED%94%84%EB%A1%9C%ED%95%84.gif?raw=true" width="800" />
+</details>
+<details><summary> 회원 상세 정보 </summary>
+  <img src="https://github.com/Pive-Guyz/ondam-backend/blob/develop/document/APITest/member/%ED%9A%8C%EC%9B%90%20%EC%83%81%EC%84%B8%20%EC%A0%95%EB%B3%B4.gif?raw=true" width="800" />
+</details>
+<details><summary> 회원 권한 변경 </summary>
+  <img src="https://github.com/Pive-Guyz/ondam-backend/blob/develop/document/APITest/member/%ED%9A%8C%EC%9B%90%20%EA%B6%8C%ED%95%9C%20%EB%B3%80%EA%B2%BD.gif?raw=true" width="800" />
+</details>
 
 
 ### 2. Counselee

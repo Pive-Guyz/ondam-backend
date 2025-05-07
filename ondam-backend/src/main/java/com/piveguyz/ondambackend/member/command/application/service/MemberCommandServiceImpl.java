@@ -96,7 +96,7 @@ public class MemberCommandServiceImpl implements MemberService {
         memberRepository.save(member);
     }
 
-   }
+
 
     // add point
     public void plusPoint(Long id) {

@@ -54,6 +54,7 @@ public class MemberCommandController {
     public ResponseEntity<String> updateAuthority(@RequestBody UpdateAuthorityDTO dto) {
         memberService.updateAuthority(dto);
         return ResponseEntity.ok("권한이 변경되었습니다.");
+    }
 
     @GetMapping("/findPasswordByNameAndEmail")
     public ResponseEntity<String> findPasswordByNameAndEmail(

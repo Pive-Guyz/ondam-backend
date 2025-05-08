@@ -2,6 +2,7 @@ package com.piveguyz.ondambackend.member.command.application.service;
 
 import com.piveguyz.ondambackend.member.command.application.dto.ChangePasswordDTO;
 import com.piveguyz.ondambackend.member.command.application.dto.MemberDTO;
+import com.piveguyz.ondambackend.member.command.application.dto.UpdateAuthorityDTO;
 import com.piveguyz.ondambackend.member.command.domain.aggregate.MemberEntity;
 import com.piveguyz.ondambackend.member.command.domain.repository.MemberRepository;
 
@@ -84,6 +85,18 @@ public class MemberCommandServiceImpl implements MemberService {
         member.setPassword(passwordDTO.getNewPassword());
         memberRepository.save(member);
     }
+
+
+    @Override
+    public void updateAuthority(UpdateAuthorityDTO dto) {
+        MemberEntity member = memberRepository.findById(dto.getId())
+                .orElseThrow(() -> new IllegalArgumentException("존재하지 않는 회원입니다."));
+
+        member.setAuthority(dto.getAuthority());
+        memberRepository.save(member);
+    }
+
+
 
     // add point
     public void plusPoint(Long id) {
@@ -168,6 +181,7 @@ public class MemberCommandServiceImpl implements MemberService {
     }
 
 }
+
 
 
 

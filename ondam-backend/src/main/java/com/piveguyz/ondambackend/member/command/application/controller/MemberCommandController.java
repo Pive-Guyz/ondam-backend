@@ -3,6 +3,7 @@ package com.piveguyz.ondambackend.member.command.application.controller;
 
 import com.piveguyz.ondambackend.member.command.application.dto.ChangePasswordDTO;
 import com.piveguyz.ondambackend.member.command.application.dto.MemberDTO;
+import com.piveguyz.ondambackend.member.command.application.dto.UpdateAuthorityDTO;
 import com.piveguyz.ondambackend.member.command.application.service.MemberService;
 import com.piveguyz.ondambackend.member.command.domain.vo.RequestRegistMembersVO;
 import lombok.extern.slf4j.Slf4j;
@@ -48,6 +49,13 @@ public class MemberCommandController {
         return ResponseEntity.ok("비밀번호가 성공적으로 변경되었습니다.");
     }
 
+
+    @PostMapping("/update-authority")
+    public ResponseEntity<String> updateAuthority(@RequestBody UpdateAuthorityDTO dto) {
+        memberService.updateAuthority(dto);
+        return ResponseEntity.ok("권한이 변경되었습니다.");
+    }
+
     @GetMapping("/findPasswordByNameAndEmail")
     public ResponseEntity<String> findPasswordByNameAndEmail(
             @RequestParam String name,
@@ -58,5 +66,6 @@ public class MemberCommandController {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body("일치하는 회원이 없습니다.");
         }
         return ResponseEntity.ok(tempPassword); // 평문 반환
+
     }
 }
